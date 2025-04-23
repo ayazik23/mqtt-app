@@ -24,7 +24,7 @@ def process_message(client, msg):
     #     client.publish("expo/result", f"Opened URL: {url}")
 
     if payload.startswith("Asos:"):
-        query = payload[1:]
+        query = payload[len("Asos:"):]
         print(f"Searching for product: {query}")
         try:
             result = search_product(query)
